@@ -13,7 +13,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Daemon turns other process into daemons. There are many tasks that
 need to be performed to correctly set up a daemon process. This can be
-tedious. Daemon performs these tasks for other processes. 
+tedious. Daemon performs these tasks for other processes.
 
 %description -l pl
 Daemon zamienia inne procesy w demony. Jest wiele zadañ, które trzeba
