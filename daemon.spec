@@ -1,4 +1,5 @@
-Summary:	Daemon turns other process into daemons.
+Summary:	Daemon turns other process into daemons
+Summary(pl):	Daemon - zamiana innych procesów w demony
 Name:		daemon
 Version:	0.6
 Release:	1
@@ -9,16 +10,24 @@ URL:		http://libslack.org/daemon/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Daemon turns other process into daemons. There are many tasks that need to be
-performed to correctly set up a daemon process. This can be tedious. Daemon
-performs these tasks for other processes. 
+Daemon turns other process into daemons. There are many tasks that
+need to be performed to correctly set up a daemon process. This can be
+tedious. Daemon performs these tasks for other processes. 
+
+%description -l pl
+Daemon zamienia inne procesy w demony. Jest wiele zadañ, które trzeba
+wykonaæ, aby poprawnie uruchomiæ demona. Mo¿e to byæ mêcz±ce. Daemon
+wykonuje te zadania dla innych procesów.
 
 %prep
 %setup -q
 
 %build
 conf/linux
-make CC="%{__cc}" CCFLAGS="%{rpmcflags}" APP_INSDIR="%{_sbindir}"
+%{__make} \
+	CC="%{__cc}" \
+	CCFLAGS="%{rpmcflags}" \
+	APP_INSDIR="%{_sbindir}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
