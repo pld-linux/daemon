@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Daemons
 Source0:	http://libslack.org/daemon/download/%{name}-%{version}.tar.gz
+# Source0-md5:	4e53183c2ed050516aa544ae3aa12600
 URL:		http://libslack.org/daemon/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
