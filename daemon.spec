@@ -1,12 +1,12 @@
 Summary:	Daemon turns other process into daemons
 Summary(pl):	Daemon - zamiana innych procesów w demony
 Name:		daemon
-Version:	0.6
+Version:	0.6.1
 Release:	1
 License:	GPL
 Group:		Daemons
 Source0:	http://libslack.org/daemon/download/%{name}-%{version}.tar.gz
-# Source0-md5:	4e53183c2ed050516aa544ae3aa12600
+# Source0-md5:	3872efc6490c433aa11766c1a8b66c35
 URL:		http://libslack.org/daemon/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
