@@ -9,6 +9,7 @@ Group:		Daemons
 Source0:	http://libslack.org/daemon/download/%{name}-%{version}.tar.gz
 # Source0-md5:	d2f3001b20bb035d55202f1945c0a0ee
 URL:		http://libslack.org/daemon/
+BuildRequires:	perl-tools-pod
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
