@@ -3,7 +3,7 @@ Summary(pl):	Daemon - zamiana innych procesów w demony
 Name:		daemon
 Version:	0.6.3
 Release:	1
-License:	GPL
+License:	GPL v2
 Group:		Daemons
 #Source0Download: http://libslack.org/daemon/
 Source0:	http://libslack.org/daemon/download/%{name}-%{version}.tar.gz
