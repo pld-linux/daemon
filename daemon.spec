@@ -1,5 +1,5 @@
 Summary:	Daemon turns other process into daemons
-Summary(pl):	Daemon - zamiana innych procesów w demony
+Summary(pl.UTF-8):   Daemon - zamiana innych procesÃ³w w demony
 Name:		daemon
 Version:	0.6.3
 Release:	1
@@ -17,10 +17,10 @@ Daemon turns other process into daemons. There are many tasks that
 need to be performed to correctly set up a daemon process. This can be
 tedious. Daemon performs these tasks for other processes.
 
-%description -l pl
-Daemon zamienia inne procesy w demony. Jest wiele zadañ, które trzeba
-wykonaæ, aby poprawnie uruchomiæ demona. Mo¿e to byæ mêcz±ce. Daemon
-wykonuje te zadania dla innych procesów.
+%description -l pl.UTF-8
+Daemon zamienia inne procesy w demony. Jest wiele zadaÅ„, ktÃ³re trzeba
+wykonaÄ‡, aby poprawnie uruchomiÄ‡ demona. MoÅ¼e to byÄ‡ mÄ™czÄ…ce. Daemon
+wykonuje te zadania dla innych procesÃ³w.
 
 %prep
 %setup -q
