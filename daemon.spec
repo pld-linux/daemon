@@ -1,5 +1,5 @@
 Summary:	Daemon turns other process into daemons
-Summary(pl.UTF-8):   Daemon - zamiana innych procesów w demony
+Summary(pl.UTF-8):	Daemon - zamiana innych procesów w demony
 Name:		daemon
 Version:	0.6.3
 Release:	1
