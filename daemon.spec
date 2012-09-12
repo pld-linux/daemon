@@ -46,5 +46,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-%attr(755,root,root) %{_sbindir}/*
-%{_mandir}/man1/*
+%attr(755,root,root) %{_sbindir}/daemon
+%{_mandir}/man1/daemon.1*
