@@ -1,15 +1,22 @@
+#
+# Conditional build
+%bcond_without	systemd	# systemd-logind support
+%bcond_with	elogind	# elogind support
+
 Summary:	Daemon turns other process into daemons
 Summary(pl.UTF-8):	Daemon - zamiana innych procesów w demony
 Name:		daemon
-Version:	0.6.4
+Version:	0.8.4
 Release:	1
 License:	GPL v2
 Group:		Daemons
-#Source0Download: http://libslack.org/daemon/
-Source0:	http://libslack.org/daemon/download/%{name}-%{version}.tar.gz
-# Source0-md5:	6cd0a28630a29ac279bc501f39baec66
-URL:		http://libslack.org/daemon/
+#Source0Download: https://libslack.org/daemon/#download
+Source0:	https://libslack.org/daemon/download/%{name}-%{version}.tar.gz
+# Source0-md5:	871ff0cc66b1eafbb17965b5ec164509
+URL:		https://libslack.org/daemon/
+%{?with_elogind:BuildRequires:	elogind-devel}
 BuildRequires:	perl-tools-pod
+%{?with_systemd:BuildRequires:	systemd-devel >= 1:209}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -26,25 +33,34 @@ wykonuje te zadania dla innych procesów.
 %setup -q
 
 %build
-conf/linux
+# not autoconf configure
+CC="%{__cc}" \
+./configure \
+	--destdir=$RPM_BUILD_ROOT \
+	--prefix=%{_prefix} \
+%if %{with elogind} || %{with systemd}
+	--enable-logind \
+%endif
+	--disable-mail-test
+
 %{__make} \
 	CC="%{__cc}" \
-	CCFLAGS="%{rpmcflags}" \
+	CCFLAGS="%{rpmcflags} -Wall -pedantic" \
 	APP_INSDIR="%{_sbindir}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	APP_INSDIR=$RPM_BUILD_ROOT%{_sbindir} \
-	APP_MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1 \
-	FMT_MANDIR=tmp
+	APP_INSDIR=%{_sbindir} \
+	MAN_GZIP=0
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
+%doc CHANGELOG README.md REFERENCES
 %attr(755,root,root) %{_sbindir}/daemon
 %{_mandir}/man1/daemon.1*
+%{_mandir}/man5/daemon.conf.5*
