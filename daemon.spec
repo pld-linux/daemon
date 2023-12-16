@@ -53,6 +53,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	APP_INSDIR=%{_sbindir} \
+	DEB_BUILD_OPTIONS=nostrip \
 	MAN_GZIP=0
 
 %clean
